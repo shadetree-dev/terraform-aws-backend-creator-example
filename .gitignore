@@ -1,9 +1,16 @@
+# VSCode and local MacOS stuff
+*.vscode*
+*.DS_*
+
 # Local .terraform directories
 **/.terraform/*
 
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+# tfplan
+*tfplan*
 
 # Crash log files
 crash.log
