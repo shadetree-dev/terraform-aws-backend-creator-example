@@ -28,3 +28,10 @@ apply: format
 destroy: format
 	@echo "Destroying Terraform-managed infrastructure..."
 	terraform destroy $(TF_ARGS)
+
+# removes files that could end up in your repository that shouldn't be
+cleanup: format
+	@echo "Deleting local files that may contain sensitive details, or are otherwise junk in the repo"
+	@for item in .terraform* terraform* *tfplan* *errored*; do \
+		rm -rf $$item; \
+	done
