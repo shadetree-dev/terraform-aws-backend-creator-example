@@ -9,6 +9,14 @@ resource "aws_kms_key" "tf_key" {
   deletion_window_in_days = var.deletion_days
   # use a custom key policy for granting access
   policy = data.aws_iam_policy_document.key_policy.json
+
+  # set our tags
+  tags = var.tags
+
+  # set timeout, because it SHOULD create quickly; something up if not 
+  timeouts {
+    create = "1m"
+  }
 }
 
 # set the alias for the key

@@ -15,3 +15,10 @@ variable "region" {
   type        = string
   default     = "us-west-2"
 }
+
+# Make sure to set the correct regex pattern in data.tf for your role!!!
+variable "sso_enabled" {
+  description = "Flag for whether or not to look up SSO role for bucket and key access"
+  type        = bool
+  default     = true
+}

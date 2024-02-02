@@ -22,3 +22,9 @@ variable "key_admin_arns" {
   description = "The list of ARNs allowed to administer keys"
   type        = list(string)
 }
+
+variable "tags" {
+  description = "The tags that should be applied to the resource"
+  type        = map(string)
+  default     = {}
+}
